@@ -131,7 +131,7 @@ args:	scratch	Pointer to array of bytes containing signature.
 		pbf		Pointer to push back handle for jar file.
 purpose: 	Verify that checksum is correct.
 returns: 0, 1, or 2.  0 means we are ready to read embedded file information.  1 means
-we have read beyound the embedded file list and can exit knowing we have read all the
+we have read beyond the embedded file list and can exit knowing we have read all the
 relevent information.  2 means we still haven't reached embdedded file list and need to
 do some more reading.
 */
