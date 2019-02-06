@@ -62,7 +62,7 @@ static void help(const char *name);
 /*
 Function name: opt_valid
 arg:	options	Bitfield flag that contains the command line options of grepjar.
-purpose:	To guard agains the occurance of certain incompatible flags being used
+purpose:	To guard agains the occurrence of certain incompatible flags being used
 together.
 returns: TRUE if options are valid, FALSE otherwise.
 */
@@ -132,7 +132,7 @@ args:	scratch	Pointer to array of bytes containing signature.
 purpose: 	Verify that checksum is correct.
 returns: 0, 1, or 2.  0 means we are ready to read embedded file information.  1 means
 we have read beyond the embedded file list and can exit knowing we have read all the
-relevent information.  2 means we still haven't reached embdedded file list and need to
+relevant information.  2 means we still haven't reached embedded file list and need to
 do some more reading.
 */
 static int check_sig(ub1 *scratch, pb_file *pbfp) {
@@ -166,7 +166,7 @@ static int check_sig(ub1 *scratch, pb_file *pbfp) {
 /*
 Function name: decd_siz
 args	csize		Pointer to embedded file's compressed size.
-		usize		Pointer to embedded file's uncmpressed size.
+		usize		Pointer to embedded file's uncompressed size.
 		fnlen		Pointer to embedded file's file name length.
 		elfen		Pointer to length of extra fields in jar file.
 		flags		Pointer to bitmapped flags.
@@ -234,7 +234,7 @@ static char *new_filename(pb_file *pbf, ub4 len) {
 }
 
 /*
-Funtion name: read_string
+Function name: read_string
 args:	pbf		Pointer to push back file handle.  Used for reading input file.
 		size	Size of embedded file in bytes.
 purpose:	Create a string containing the contents of the embedded noncompressed file.
@@ -297,7 +297,7 @@ static char *extract_line(const char *stream, regoff_t begin, regoff_t end, int 
 Function name: chk_wrd
 args:	exp		Pointer to compiled POSIX style regular expression of search target.
 		str		String known to contain at least one match of exp.
-purpose: Verify that the occurance of the regular expression in str occurs as a whole
+purpose: Verify that the occurrence of the regular expression in str occurs as a whole
 word and not a substring of another word.
 returns: TRUE if it is a word, FALSE of it is a substring.
 */
@@ -437,7 +437,7 @@ Funtion name: fnd_match
 args:	exp			Pointer to compiled POSIX style regular expression of search target.
 		str_stream	String that contains the contents of the extracted file entry.
 		i			Pointer to counter and index of matches.
-purpose:	Search str_stream for occurances of the regular expression exp and create
+purpose:	Search str_stream for occurrences of the regular expression exp and create
 an array of matches.
 returns:  Pointer to newly allocated array of regmatch_t which gives indexes to start
 and end of matches.  NULL is returned upon no matches found.
@@ -483,7 +483,7 @@ args:	exp		Pointer to compiled POSIX style regular expression of search target.
 				the pushback.c file io funtions.
 		options	Bitwise flag containing flags set to represent the command line options.
 purpose:	This function handles single entries in an open jar file.  The header is
-read and then the embeded file is extracted and grepped.
+read and then the embedded file is extracted and grepped.
 returns: FALSE upon failure, TRUE otherwise.
 */
 
@@ -532,7 +532,7 @@ static int cont_grep(regex_t *exp, regex_t *nl_exp, int fd, pb_file *pbf, int op
 }
 
 /*
-Funtion name: jargrep
+Function name: jargrep
 args:	exp		Pointer to compiled POSIX style regular expression of search target.
 		nl_exp	Pointer to compiled regular expression for newlines or NULL.  Only set 
 				if -n option is present at command line.
@@ -590,7 +590,7 @@ static const struct option option_vec[] =
 };
 
 /*
-Funtion Name: main
+Function Name: main
 args:	argc	number of in coming args.
 		argv	array of strings.
 purpose: Entry point of the program.  Parse command line arguments and set options.
